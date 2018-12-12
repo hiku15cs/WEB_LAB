@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	p{
+		font-size:25pt;
+		color:red;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<p id = "text1"></p>
+	
+	<script>
+		var var1 = setInterval(increment,100);
+		var fs = 5;
+		var var2;
+		var d = document.getElementById("text1");
+		function increment()
+		{
+			
+			d.innerHTML = "TEXT-GROWING";
+			d.setAttribute('style','font-size:'+fs+'pt; color:red');
+			fs++;
+			if(fs == 50)
+			{
+				clearInterval(var1);
+				var2 = setInterval(decrement,100);
+			}
+		}
+		function decrement()
+		{
+			
+			d.innerHTML = "TEXT-SHRINKING";
+			d.setAttribute("style","font-size:"+fs+"pt;color:blue");
+			fs--;
+			if(fs == 5)
+			{
+				clearInterval(var1);
+			}
+		}
+	</script>
+</body>
+		
+</html>	

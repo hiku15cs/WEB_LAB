@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<script>
+		function display(x)
+		{
+			document.getElementById("text1").value+=x;
+		}
+		function compute()
+		{
+			var x=document.getElementById("text1").value;
+			document.getElementById("text1").value=eval(x);
+		}
+
+	</script>
+		<style>
+			input{
+					width:95%;
+					height:100%;
+				}
+		</style>
+	</head>
+	
+	<body>
+		<form action="">
+		<center>
+			<table border="2px solid black" style="color:maroon" >
+				<tr><td colspan="4"><center>CALCULATOR</center></td></tr>
+				
+				<tr><td colspan="4"><center><input type="textbox"  id="text1" placeholder="0"/></center></td></tr>
+				<tr>
+					<td><input type="button" value="+" onclick="display(this.value)"></td>
+					<td><input type="button" value="-" onclick="display(this.value)"></td>
+					<td><input type="button" value="*" onclick="display(this.value)"></td>
+					<td><input type="button" value="/" onclick="display(this.value)"></td>										
+				</tr>
+				<tr>
+					<td><input type="button" value="7" onclick="display(this.value)"></td>
+					<td><input type="button" value="8" onclick="display(this.value)"></td>
+					<td><input type="button" value="9" onclick="display(this.value)"></td>
+					<td><input type="reset" value="C"/></td>					
+				</tr>
+				
+				<tr>
+					<td><input type="button" value="4" onclick="display(this.value)"></td>
+					<td><input type="button" value="5" onclick="display(this.value)"></td>
+					<td><input type="button" value="6" onclick="display(this.value)"></td>
+					<td><input type="button" value="0" onclick="display(this.value)"></td>
+					
+				</tr>
+				<tr>
+					<td><input type="button" value="1" onclick="display(this.value)"></td>
+					<td><input type="button" value="2" onclick="display(this.value)"></td>
+					<td><input type="button" value="3" onclick="display(this.value)"></td>
+					<td rowspan="1"><input type="button" style="height:30px;" value="=" onclick="compute()"></td>
+				</tr>
+				
+			</table>
+			</center>
+		</form>
+		
+	</body>
+	
+	
+</html>
+				
