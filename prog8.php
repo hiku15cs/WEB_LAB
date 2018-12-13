@@ -1,20 +1,3 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @hiku15cs Sign out
-1
-0 0 iamvinitk/VTU-Web-Lab
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-VTU-Web-Lab/prgm8/prgm8.php
-14af35e  14 days ago
-@iamvinitk iamvinitk Final Commit
-     
-100 lines (89 sloc)  2.36 KB
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,16 +89,3 @@ for ($i = 0; $i < $row; $i++) {
 }
 print "</pre><br>";
 ?>
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
