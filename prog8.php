@@ -1,88 +1,121 @@
-	<!DOCTYPE html>
-<html>
-	<head>
-		<title>Matrix Transpose </title>
-		<style>
-			input{
-				position:fixed;
-				left:300px;
-			}
-			
-			p{
-				margin-top:30px;
-				font-size:20px;
-				font-style:bold;
-			}
-		</style>
-	</head>
-	<body>
-			<h1>Matrix operations:</h1>
-	
-<?php
-	$a=array(array(1,2,3),array(4,5,6),array(7,8,9));
-	$b=array(array(1,0,0),array(0,1,0),array(0,0,1));
-	$row= count($a);
-	$col= count($a[0]);
-	echo "<p> Original matrices:<p>";
-	echo "A &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp B<br>";
-	for($i=0;$i<$row;$i++)
-	{
-		for($j=0;$j<$col;$j++)
-		{
-			echo "".$a[$i][$j]." ";
-		}
-		echo "&nbsp &nbsp &nbsp";
-		for($j=0;$j<$col;$j++)
-		{
-			echo "".$b[$i][$j]." ";
-		}
-		echo "<br>";
-	}
-	
-	echo "<p> Transpose matrix:<p>";
-	echo "At<br>";
-	for($i=0;$i<$row;$i++)
-	{
-		for($j=0;$j<$col;$j++)
-		{
-			echo "".$a[$j][$i]." ";
-		}
-		echo "<br>";
-	}
-	
-	echo "<p>Addition:<p>";
-	echo "A + B<br>";
-	for($i=0;$i<$row;$i++)
-	{
-		for($j=0;$j<$col;$j++)
-		{
-			echo "".($a[$i][$j] + $b[$i][$j]) ." ";
-		}
-		echo "<br>";
-	}
-	
-	echo "<p>Matrix multiplication:<p>";
-	echo "A * B<br>";
+Skip to content
+ 
+Search or jump to…
 
-	if($row==$col)
-	{
-		for($i=0;$i<$row;$i++)
-		{
-			for($j=0;$j<$col;$j++)
-			{
-				$sum=0;
-				for($k=0;$k<$row;$k++)
-				{
-					$sum+= ($a[$i][$k]*$b[$j][$k]);
-				}
+Pull requests
+Issues
+Marketplace
+Explore
+ @hiku15cs Sign out
+1
+0 0 iamvinitk/VTU-Web-Lab
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+VTU-Web-Lab/prgm8/prgm8.php
+14af35e  14 days ago
+@iamvinitk iamvinitk Final Commit
+     
+100 lines (89 sloc)  2.36 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PHP Calculator</title>
+</head>
+<body>
+<form method="post" action="prgm8.php">
+    <h2>8a. Simple Calculator</h2>
+    <label>Enter a : </label>
+    <label>
+        <input type="text" name="v1" value="0"/>
+    </label>
+    <br>
+    <label>Enter b : </label>
+    <label>
+        <input type="text" name="v2" value="0"/>
+    </label>
+    <br>
+    <input type="submit" value="CALCULATE"/><br>
+    <?php
+    if (isset($_POST["v1"]))
+        $a = $_POST["v1"];
+    if (isset($_POST["v2"]))
+        $b = $_POST["v2"];
+    if (isset($_POST["v1"]) and isset($_POST["v2"])) {
+        print "Addition : " . ($a) . " + " . ($b) . " = " . ($a + $b) . "<br>";
+        print "Subtraction : " . ($a) . " - " . ($b) . " = " . ($a - $b) . "<br>";
+        print "Multiplication : " . ($a) . " * " . ($b) . " = " . ($a * $b) . "<br>";
+        print "Division : " . ($a) . " / " . ($b) . " = " . ($a / $b) . "<br>";
+    }
+    ?>
 
-				echo "".$sum." ";
-			}
-			echo "<br>";
-		}
-	}
-?>	
-	</body>
+    <h2>Matrix Operations</h2>
+</form>
+</body>
 </html>
 
-<!-- -->
+<?php
+$a = array(array(1, 2, 3), array(4, 5, 6), array(7, 8, 9));
+$b = array(array(9, 8, 7), array(6, 5, 4), array(3, 2, 1));
+$row = count($a);
+$col = count($a[0]);
+print "<h4>The two matrices are:</h4>";
+print "<pre>A          B<br>";
+for ($i = 0; $i < $row; $i++) {
+    for ($j = 0; $j < $col; $j++) {
+        print ($a[$i][$j]) . " ";
+    }
+    print "     ";
+    for ($j = 0; $j < $col; $j++) {
+        print ($b[$i][$j]) . " ";
+    }
+    print "<br>";
+}
+print "</pre>";
+print "<h2>8b. Transpose of a Matrix</h2>";
+print "<pre>A<sup>t</sup>         B<sup>t</sup><br>";
+for ($i = 0; $i < $row; $i++) {
+    for ($j = 0; $j < $col; $j++) {
+        print ($a[$j][$i]) . " ";
+    }
+    print "     ";
+    for ($j = 0; $j < $col; $j++) {
+        print ($b[$j][$i]) . " ";
+    }
+    print "<br>";
+}
+print "</pre><br>";
+print "<h2>8c. Multiplication of two Matrices</h2>";
+print "<pre>(AxB)<br>";
+for ($i = 0; $i < $row; $i++) {
+    for ($j = 0; $j < $col; $j++) {
+        $sum = 0;
+        for ($k = 0; $k < $col; $k++) {
+            $sum = $sum + ($a[$i][$k] * $b[$k][$j]);
+        }
+        print $sum . " ";
+    }
+    print "<br>";
+}
+print "</pre><br>";
+print "<h2>8d. Addition of two Matrices</h2>";
+print "<pre>(A+B)<br>";
+for ($i = 0; $i < $row; $i++) {
+    for ($j = 0; $j < $col; $j++) {
+        print ($a[$i][$j] + $b[$i][$j]) . " ";
+    }
+    print "<br>";
+}
+print "</pre><br>";
+?>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
